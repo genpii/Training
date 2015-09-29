@@ -6,20 +6,20 @@
 
 using namespace std;
 
+void rev_str(char *st);
+void rev_str(char *in, char *out);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int a, b, c;
+	char s1[80], s2[80];
+
+	strcpy(s1, "This is a test");
 	
-	cout << "input a and b\n";
-	cin >> a >> b;
+	rev_str(s1);
+	cout << s1 << "\n";
 
-	c = 1;
-	for (; b; b--){
-		c = c * a;
-	}
-
-	cout << c << "\n";
+	rev_str(s1, s2);
+	cout << s1 << " " << s2 << "\n";
 
 	// q ‚ÅI—¹
 	char ch;
@@ -28,5 +28,28 @@ int _tmain(int argc, _TCHAR* argv[])
 	} while (ch != 'q');
 
 	return 0;
+}
+
+void rev_str(char *st)
+{
+	char temp[80];
+	int i, j;
+
+	for (i = strlen(st) - 1, j = 0; i >= 0; i--, j++)
+		temp[j] = st[i];
+
+	temp[j] = '\0';
+
+	strcpy(st, temp);
+}
+
+void rev_str(char *in, char *out)
+{
+	int i, j;
+
+	for (i = strlen(in) - 1, j = 0; i >= 0; i--, j++)
+		out[j] = in[i];
+
+	out[j] = '\0';
 }
 
