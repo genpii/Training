@@ -20,8 +20,8 @@ prompt::prompt(char *in)
 prompt::~prompt()
 {
 	int i, j;
-	for (i = 0; i < count; i++){
-		Beep(13000, 4000);
+	for (i = 0; i < count; i++) {
+		Beep(13000, 1000);
 		//for (j = 0; j < 100000; j++);
 	}
 }
