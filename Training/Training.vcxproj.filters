@@ -29,7 +29,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="overload_coord.cpp">
+    <ClCompile Include="overload_array.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
