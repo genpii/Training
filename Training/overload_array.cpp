@@ -33,7 +33,8 @@ void array::show()
 	int i;
 	for (i = 0; i < 10; i++)
 		cout << nums[i] << ' ';
-	cout << "n";
+
+	cout << "\n";
 }
 
 array array::operator+(array ob2)
@@ -56,7 +57,36 @@ array array::operator-(array ob2)
 	return tmp;
 }
 
-array array::operator+(array ob2)
+int array::operator==(array ob2)
 {
-	
+	int i;
+
+	for (i = 0; i < 10; i++)
+		if (nums[i] != ob2.nums[i]) return 0;
+
+	return 1;
+}
+
+
+int main()
+{
+	array o1, o2, o3;
+	int i[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	o1.set(i);
+	o2.set(i);
+
+	o3 = o1 + o2;
+	o3.show();
+
+	o3 = o1 - o3;
+	o3.show();
+
+	if (o1 == o2) cout << "o1‚Æo2‚Í“¯‚¶\n";
+	else cout << "o1‚Æo2‚ÍˆÙ‚È‚é\n";
+
+	if (o1 == o3) cout << "o1‚Æo3‚Í“¯‚¶\n";
+	else cout << "o1‚Æo3‚ÍˆÙ‚È‚é\n";
+
+	return 0;
 }
